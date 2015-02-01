@@ -15,12 +15,16 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
+	// Load grunt tasks manually
+	grunt.loadNpmTask('grunt-contrib-watch');
 
   // Configurable paths
   var config = {
     app: 'app',
     dist: 'dist'
   };
+	
+	grunt.loadNpmTask('grunt-contrib-watch');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
