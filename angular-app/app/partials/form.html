@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <div class="panel-title">{{texts.title}}</div>
+    </div>
+    <div class="panel-body">
+      <div>{{texts.panel}}</div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-horizontal" role="form" ng-controller="FormCtrl">
+            <div class="form-group">
+              <label class="col-md-2 control-label">Email:</label>
+
+              <div class="col-md-10">
+                <input type="email" class="form-control" ng-model="user_info.email"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Password</label>
+
+              <div class="col-md-10">
+                <input class="form-control" type="password" ng-model="user_info.password"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" ng-model="user_info.auto_login"/>Auto Login
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-primary" ng-click="getFormInfo()">Got Form Info</button>
+                <button class="btn btn-info" ng-click="setFormInfo()">Set Form Info</button>
+                <button class="btn btn-default" ng-click="resetFormInfo()">Reset Form Info</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

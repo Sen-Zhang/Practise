@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="panel">
+    <div class="panel-body">
+      <p class="text-{{color}}">Text for css test.</p>
+      <button class="btn btn-info" ng-click="setColor('red')">Set Color to Red</button>
+      <button class="btn btn-primary" ng-click="setColor('green')">Set Color to Green</button>
+
+      <hr/>
+
+      <p class="alert" ng-class="{'alert-danger': isError, 'alert-warning': isWarning}" role="alert">{{messageText}}</p>
+      <button class="btn btn-danger" ng-click="setError()">Set Error</button>
+      <button class="btn btn-warning" ng-click="setWarning()">Set Warning</button>
+
+      <hr/>
+
+      <div ng-controller="ToggleCtrl">
+        <button class="btn btn-primary" ng-click="toggleMenu()">Toggle Menu</button>
+        <ul ng-show="menu_status">
+          <li>Ruby</li>
+          <li>Rails</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
