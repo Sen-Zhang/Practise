@@ -42,6 +42,6 @@ cp scripts/private/goto_step.bat $SANDBOX_DIR
 # Install karma modules
 cp -r node_modules/ $SANDBOX_DIR/
 
-zip -r angular-phonecat-`date +"%y%m%d_%H%M"` $SNAP_DIR
+zip -r angular-app-`date +"%y%m%d_%H%M"` $SNAP_DIR
 
 git checkout master
