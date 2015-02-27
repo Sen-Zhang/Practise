@@ -11,4 +11,32 @@
       </ul>
     </div>
   </div>
+
+  <div class="row">
+    <div hello></div>         <!-- 'A' -->
+    <hello></hello>           <!-- 'E' -->
+    <div class="hello"></div> <!-- 'C' -->
+    <!-- directive:hello -->  <!-- 'M' -->
+
+    <hello-world></hello-world>
+    <hello-sen>
+      <p>Hello Sen!</p>
+    </hello-sen>
+    <loader howToLoad="loadData()">Load Data...</loader>
+  </div>
+
+  <div class="row">
+    <drink flavor="{{ctlFlavor}}"></drink>
+  </div>
+
+  <div class="row">
+    <label>Controller</label>
+    <input type="text" ng-model="ctlSoda"/>
+    <label>Directive</label>
+    <soda flavor="ctlSoda"></soda>
+  </div>
+
+  <div class="row">
+    <greeting greet="sayHello(name)"></greeting>
+  </div>
 </div>

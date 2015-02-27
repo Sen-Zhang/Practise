@@ -1,13 +1,30 @@
 <div class="container-fluid">
   <div class="well clearfix">
-    <div class="col-md-2">
-      <a href="#/books"><h5>Awesome Books</h5></a>
+    <div class="row">
+      <div class="col-md-2">
+        <a href="#/books"><h5>Awesome Books</h5></a>
+      </div>
+      <div class="col-md-10">
+        <ul>
+          <li>ID: {{book.id}}</li>
+          <li>Name: {{book.name}}</li>
+        </ul>
+      </div>
     </div>
-    <div class="col-md-10">
-      <ul>
-        <li>ID: {{book.id}}</li>
-        <li>Name: {{book.name}}</li>
-      </ul>
+
+    <div class="row">
+      <hello-world></hello-world>
+    </div>
+
+    <div class="row">
+      <superman strength>动感超人+力量</superman>
+    </div>
+    <div class="row">
+      <superman strength speed>动感超人+力量+敏捷</superman>
+    </div>
+    <div class="row">
+      <superman strength speed light>动感超人+力量+敏捷+光</superman>
     </div>
   </div>
+</div>
 </div>

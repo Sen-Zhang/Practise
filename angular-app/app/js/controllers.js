@@ -10,7 +10,18 @@ bookControllers.controller('BooksCtrl', ['$scope',
       {id: 1, name: 'Ruby'},
       {id: 2, name: 'Rails'},
       {id: 3, name: 'JavaScript'}
-    ]
+    ];
+
+    $scope.ctlFlavor = 'Pepsi';
+    $scope.ctlSoda = 'Coca-Cola';
+
+    $scope.loadData = function () {
+      console.log('load data...');
+    };
+
+    $scope.sayHello = function (name) {
+      alert('hello' + name);
+    }
   }]);
 
 bookControllers.controller('BookShowCtrl', ['$scope',

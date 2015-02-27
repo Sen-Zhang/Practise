@@ -7,7 +7,9 @@ var myApp = angular.module('myApp', [
 
   'bookControllers',
   'formControllers',
-  'styleControllers'
+  'styleControllers',
+
+  'myDirectives'
 ]);
 
 myApp.config(['$routeProvider',
