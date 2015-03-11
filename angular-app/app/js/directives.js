@@ -24,7 +24,7 @@ myDirectives.directive('helloSen', function () {
   return {
     restrict: 'E',
     transclude: true,
-    template: "<div>Hello World! <div ng-transclude=''></div></div>"
+    template: "<div>Hello World! <p ng-transclude></p></div>"
   }
 });
 

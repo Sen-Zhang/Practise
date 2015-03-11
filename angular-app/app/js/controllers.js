@@ -4,8 +4,17 @@
 
 var bookControllers = angular.module('bookControllers', []);
 
-bookControllers.controller('BooksCtrl', ['$scope',
-  function ($scope) {
+bookControllers.controller('BooksCtrl', ['$scope', '$http',
+  function ($scope, $http) {
+    $http({
+      method: 'GET',
+      url: 'books.json'
+    }).success(function(data, status, headers, config) {
+      console.log('success...');
+      console.log(data);
+      $scope.books = data;
+    });
+
     $scope.books = [
       {id: 1, name: 'Ruby'},
       {id: 2, name: 'Rails'},
