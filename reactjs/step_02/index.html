@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://fb.me/react-0.13.2.js"></script>
+    	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	</head>
+	<body>
+		<div id='content'></div>
+		<script type="text/jsx">
+			/* 
+				jsx syntax rules:
+					html tags remains the same,
+					code inside {} will be interpreted as javascript code  
+			*/
+			var names = ['Alice', 'Bob', 'Eve'];
+			
+			React.render(
+				<div>
+					{
+						names.map(function (name) {
+							return <h1>Hello, {name}</h1>;
+						})
+					}
+				</div>,
+				document.getElementById('content')
+			)
+		</script>
+	</body>
+</html>
