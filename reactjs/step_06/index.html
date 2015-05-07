@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://fb.me/react-0.13.2.js"></script>
+    	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	</head>
+	<body>
+		<div id='content'></div>
+		<script type="text/jsx">
+			/* React.findDOMNode() */
+			/* 
+			   Target DOM element has to have a 'ref' attribute, 
+			   so that React.findDOMNode() can use the ref to find the elemnet
+			   
+			   React.findDOMNode(this.refs.[refName])
+			 */
+			
+			var MyComponent = React.createClass({
+				handleClick: function() {
+					React.findDOMNode(this.refs.theInput).focus();
+				},
+			
+				render: function() {
+					return (
+						<div>
+							<input type='text' ref='theInput' />
+							<input type='button' value='Get Focus' onClick={this.handleClick} />
+						</div>
+					)
+				}
+			});
+			
+			React.render(
+				<MyComponent />,
+				document.getElementById('content')
+			)
+		</script>
+	</body>
+</html>
