@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://fb.me/react-0.13.2.js"></script>
+    	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	</head>
+	<body>
+		<div id='content'></div>
+		<script type="text/jsx">
+			/* component lifecycle */
+			/*
+				Components have three main parts of their lifecycle:
+					Mounting: A component is being inserted into the DOM.
+					Updating: A component is being re-rendered to determine if the DOM should be updated.
+					Unmounting: A component is being removed from the DOM. 
+				'will' methods and 'did' methods:
+				'will': called before something happens
+				'did': called after something happens
+				
+				Mounting:
+					componentWillMount()
+					componentDidMount()
+				Updateing:
+					componentWillReceiveProps(object nextProps)
+					shouldComponentUpdate(object nextProps, object nextState)
+					componentWillUpdate(object nextProps, object nextState)
+					componentDidUpdate(object prevProps, object prevState)
+				Unmounting:
+					componentWillUnmount()
+			*/
+			
+			/* component style: style={{opacity: this.state.opacity}} */
+			
+			var Hello = React.createClass({
+				getInitialState: function () {
+					return {opacity: 1.0};
+				},
+				
+				componentDidMount: function () {
+					this.timer = setInterval(function () {
+						var opacity = this.state.opacity;
+						opacity -= .05;
+						
+						if (opacity < 0) {
+							opacity = 1.0;
+						}
+						
+						this.setState({opacity: opacity});
+					}.bind(this), 100)
+				},
+				
+				render: function () {
+					return(
+						<div style={{opacity: this.state.opacity}}>
+							<h2>Hello {this.props.name}!</h2>
+						</div>
+					);
+				}
+			});
+			
+			React.render(
+				<Hello name='Sen' />,
+				document.getElementById('content')
+			);
+		</script>
+	</body>
+</html>
