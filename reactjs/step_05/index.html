@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://fb.me/react-0.13.2.js"></script>
+    	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	</head>
+	<body>
+		<div id='content'></div>
+		<script type="text/jsx">
+			/* component */
+			/* 
+				this.props.children: all children nodes within the component
+				only when there are more than one child node this.props.children is an array
+			*/
+			
+			var NodeList = React.createClass({
+				render: function () {
+					return (
+						<ol>
+							{
+								this.props.children.map(function (child) {
+									return <li>{child}</li>
+								})
+							}
+						</ol>
+					)
+				}
+			});
+			
+			
+			React.render(
+				<NodeList>
+					<span>Hello</span>
+					<span>World</span>
+				</NodeList>,
+				document.getElementById('content')
+			)
+		</script>
+	</body>
+</html>
