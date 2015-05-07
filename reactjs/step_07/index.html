@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://fb.me/react-0.13.2.js"></script>
+    	<script src="https://fb.me/JSXTransformer-0.13.2.js"></script>
+	</head>
+	<body>
+		<div id='content'></div>
+		<script type="text/jsx">
+			/* this.state */
+			/*
+				getInitialState() returns an object which contains the states info,
+				this.setState() is used to update this.state
+				after this.setState() is called, this.render() will automatically run
+				in order to rerender the component
+			*/
+			
+			var LikeButton = React.createClass({
+				getInitialState: function () {
+					return {liked: false};
+				},
+				
+				handleClick: function () {
+					this.setState({liked: !this.state.liked});
+				},
+				
+				render: function () {
+					var text = this.state.liked ? 'like' : 'unlike';
+					
+					return(
+						<p onClick={this.handleClick}>
+							You {text} the post.
+						</p>
+					);
+				}
+			})
+			
+			React.render(
+				<LikeButton />,
+				document.getElementById('content')
+			);
+		</script>
+	</body>
+</html>
